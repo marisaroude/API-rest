@@ -38,10 +38,12 @@ Una vez aquí debemos ejecutar de a uno los scripts que se encuentran dentro de 
       password VARCHAR(255) NOT NULL
       );  
   ```
-4.
+4. 
+
    ```
    INSERT INTO users (email, name, phone, address, password) VALUES ('prueba@probando.com', 'prueba', '3442123456', 'mitre 677', 'abc123');
    ```
+   
 Puedes chequear la inserción con el siguiente comando:
 `\d users`
 
@@ -63,9 +65,10 @@ Si la conexión con la Base de datos está ok, deberíamos ver en la terminal lo
 ![image](https://github.com/marisaroude/API-rest/assets/81636065/e7ba73b5-d049-40ab-a459-c8b1cf6f502a)
 
 ¡Bien! Ya tenemos todo configurado para comenzar a realizar las pruebas en Postman.
+
 Para ello debemos importar en Postman el archivo `API-rest.json` que se encuentra en la raíz del directorio.
 
-# End-point: getUsers
+## End-point: getUsers
 
 Vamos a obtener los usuarios, en este caso solo deberíamos obtener un usuario, ya que de momento solo insertamos uno
 
@@ -84,7 +87,7 @@ Hacemos click en 'Send' y obtendremos lo siguiente:
 ]
 ```
 
-# End-point: loginUser
+## End-point: loginUser
 Ahora, en el POST de loginUser nos dirigimos a la sección de "body", seleccionamos "raw", ingresamos lo siguiente y damos click en 'Send':
 ```
 {
@@ -109,11 +112,14 @@ Obtendremos lo siguiente:
 ```
 
 El access_token nos servirá para las peticiones que requieran token de acceso.
-TENER EN CUENTA: El token durará una hora, por lo tanto, en caso de errores, generar un nuevo token.
 
-# End-point: getUser
-Si no tiene Token al dar click en 'Send' nos arrojará `Unauthorized` 
+**TENER EN CUENTA**: El token durará una hora, por lo tanto, en caso de errores, generar un nuevo token.
+
+## End-point: getUser
+Si no tiene Token al dar click en 'Send' nos arrojará `Unauthorized`.
+
 Por esto, nos dirigimos a la sección 'Authorization' seleccionamos la opción 'Bearer Token', colocamos el token previamente obtenido y guardamos cambios.
+
 Ahora si, podemos intentar dar click en 'Send' y obtendremos: 
 
 ```
@@ -132,8 +138,9 @@ Ahora si, podemos intentar dar click en 'Send' y obtendremos:
 
 (Este endpoint tiene como id el 1 por defecto, al ingresar más items podemos cambiarlo)
 
-# End-point: CreateUser
+## End-point: CreateUser
 Este endpoint también requiere de Token, por lo tanto, debes seguir los pasos del endpoint loginUser.
+
 Nos dirigimos a la sección de "body", seleccionamos "raw", ingresamos lo siguiente y damos click en 'Send':
 ```
 {
@@ -157,8 +164,9 @@ y obtendremos:
 ```
 
 
-# End-point: getUser
+## End-point: getUser
 Este endpoint también requiere de Token, por lo tanto, debes seguir los pasos del endpoint loginUser.
+
 Vamos a obtener un usuario específico, según el id, por defecto está colocado el id:1
 
 Damos click en 'Send' y obtenemos:
@@ -177,9 +185,11 @@ Damos click en 'Send' y obtenemos:
 ]
 ```
 
-# End-point: updateUser
+## End-point: updateUser
 Este endpoint también requiere de Token, por lo tanto, debes seguir los pasos del endpoint loginUser.
+
 En este endpoint, por defecto se seleccionó el id 2, para modificar los datos del segundo insertado.
+
 Nos dirigimos a la sección de "body", seleccionamos "raw", ingresamos lo siguiente y damos click en 'Send':
 ```
 {
@@ -203,7 +213,9 @@ y nos devuelve:
 }
 ```
 
-# End-point: deleteUser
+## End-point: deleteUser
 Este endpoint también requiere de Token, por lo tanto, debes seguir los pasos del endpoint loginUser.
+
 En este endpoint, por defecto se seleccionó el id 2, para eliminar los datos del recientemente modificado.
+
 Damos click en 'Send' y la Response será `204 No Content`.
