@@ -9,16 +9,6 @@
 		{
 			"name": "getUser",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjM0NDIxMjM0NTYiLCJlbWFpbCI6InBydWViYUBwcm9iYW5kby5jb20iLCJpYXQiOjE3MDg2MzQ3MjgsImV4cCI6MTcwODYzODMyOH0.l5R_Irss-E2AtdqU_2kQZI02qzXj3N_No2HHo6dMh28",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [
 					{
@@ -88,6 +78,9 @@
 		},
 		{
 			"name": "getUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -97,6 +90,15 @@
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:4000/api/v1/users",
 					"protocol": "http",
@@ -116,16 +118,6 @@
 		{
 			"name": "createUser",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjM0NDIxMjM0NTYiLCJlbWFpbCI6InBydWViYUBwcm9iYW5kby5jb20iLCJpYXQiOjE3MDg2MzQ3MjgsImV4cCI6MTcwODYzODMyOH0.l5R_Irss-E2AtdqU_2kQZI02qzXj3N_No2HHo6dMh28",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -144,7 +136,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/v1/users/login",
+					"raw": "http://localhost:4000/api/v1/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -153,15 +145,7 @@
 					"path": [
 						"api",
 						"v1",
-						"users",
-						"login"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
-						}
+						"users"
 					]
 				}
 			},
@@ -170,16 +154,6 @@
 		{
 			"name": "deleteUser",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjM0NDIxMjM0NTYiLCJlbWFpbCI6InBydWViYUBwcm9iYW5kby5jb20iLCJpYXQiOjE3MDg2MzQ3MjgsImV4cCI6MTcwODYzODMyOH0.l5R_Irss-E2AtdqU_2kQZI02qzXj3N_No2HHo6dMh28",
-							"type": "string"
-						}
-					]
-				},
 				"method": "DELETE",
 				"header": [
 					{
@@ -189,7 +163,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/api/v1/users/3",
+					"raw": "http://localhost:4000/api/v1/users/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -199,7 +173,7 @@
 						"api",
 						"v1",
 						"users",
-						"3"
+						"2"
 					]
 				}
 			},
@@ -211,16 +185,6 @@
 				"disabledSystemHeaders": {}
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjM0NDIxMjM0NTYiLCJlbWFpbCI6InBydWViYUBwcm9iYW5kby5jb20iLCJpYXQiOjE3MDg2MzQ3MjgsImV4cCI6MTcwODYzODMyOH0.l5R_Irss-E2AtdqU_2kQZI02qzXj3N_No2HHo6dMh28",
-							"type": "string"
-						}
-					]
-				},
 				"method": "PUT",
 				"header": [
 					{
@@ -231,7 +195,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"name\": \"testingput\",\n \"phone\": \"01020304\",\n \"email\": \"testing@put.com\",\n \"password\": \"puttesting\",\n \"address\": \"testing put 1\"\n}\n",
+					"raw": "{\n \"name\": \"testingput\",\n \"phone\": \"01020304\",\n \"email\": \"testing@put.com\",\n \"password\": \"puttesting\",\n \"address\": \"testing put 2\"\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
